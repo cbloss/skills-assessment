@@ -1,0 +1,191 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body, 
+html {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #fff;
+	background-color: #1a1a1a;
+	min-height: 100%;
+	font-size: 12px;
+}
+
+/**
+* Typography
+*/ 
+h1, 
+h2, 
+p {
+	margin: 0;
+	font-weight: 400;
+} 
+
+p {
+	margin-top: 1em;
+}
+
+p:first-child {
+	margin-top: 0;
+}
+
+h1 {
+	font-size: 14px;
+}
+
+a {
+	color: #13c8ce;
+}
+
+.red {
+	background-color: #ff0000;
+}
+
+.yellow {
+	background-color: #fffc00;
+}
+
+.green {
+	background-color: #00ff1e;
+}
+
+/**
+* Sections
+*/
+header {
+	border-bottom: 2px solid #131313;
+	position: relative;
+	z-index: 60;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: right;
+	height: 50px;
+	z-index: 61;
+}
+
+#overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 50;
+	display: none;
+}
+
+body.open #overlay {
+	display: block;
+}
+
+#main-content {
+	margin-bottom: 50px;
+}
+
+.gradient {
+	padding: 1em;
+	background: #444444 linear-gradient(rgba(255, 255, 255, 0.3), 5%, rgba(0, 0, 0, 0.5));
+}
+
+select {
+	background: #363636;
+	color: #fff;
+	padding: 0.25em;
+}
+
+/**
+* Contact rows
+*/
+section {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+	background-color: #212121;
+	cursor: pointer;
+	border-collapse: collapse;
+	border-top: 1px solid #131313;
+	border-bottom: !px solid #131313;
+	transition: background-color 1s;
+}
+
+section:nth-child(even) {
+	background-color: #1a1a1a
+}
+
+section:hover {
+	background-color: rgba(72, 72, 72, 0.5);
+}
+
+section > div:not(.dot) {
+	padding: 0.75em 1em;
+}
+
+section .dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 0.75em 1em;
+}
+
+section .name {
+	width: 30%;
+}
+
+.hide-show {
+	color: #565656;
+	padding-left: 0.75em;
+}
+
+.full-info, 
+.hide-show .phone {
+	display: none;
+}
+
+/**
+* Active row
+*/
+section.active {
+	background-color: rgba(72, 72, 72, 1);
+	transition: background-color 0s;
+	position: relative;
+	z-index: 62;
+}
+
+.details {
+	position: relative;
+	flex-grow: 1;
+	-webkit-flex-grow: 1;
+	border-left: 2px solid #131313;
+}
+
+.active .details {
+	padding: 0;
+	align-self: flex-start;
+	-webkit-align-self: flex-start;
+}
+
+.active .details .hide-show {
+	display: none;
+}
+
+.active .details .full-info {
+	display: block;
+}
+
+.full-info {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(72, 72, 72, 1);
+	padding: 1em 1.75em 1.5em;
+	z-index: 9999;
+}
